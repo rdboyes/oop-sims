@@ -30,17 +30,17 @@ college <- sim_effect(4163.11,4664.97)
 #create 124 people that match the known sample
 
 sim_results <- list()
-for(i in 1:129){
+for(i in 1:126){
   sim_results[[i]] <- rnorm(n=100000,mean=4133.96,sd=4511.71)
 }
 
 #Modify the last 5 people based on the characteristics of the missing data
 
-sim_results[[125]] <- sim_results[[125]] + male + age_60 + on + retired + spouse + college
-sim_results[[126]] <- sim_results[[126]] + male + college + age_60 + on + emp + spouse
-sim_results[[127]] <- sim_results[[127]] + male + college + age_50 + on + emp + child
-sim_results[[128]] <- sim_results[[128]] + male + college + age_50 + west + emp + child
-sim_results[[129]] <- sim_results[[129]] + male + college + age_50 + mid + emp + child
+sim_results[[122]] <- sim_results[[125]] + male + age_60 + on + retired + spouse + college
+sim_results[[123]] <- sim_results[[126]] + male + college + age_60 + on + emp + spouse
+sim_results[[124]] <- sim_results[[127]] + male + college + age_50 + on + emp + child
+sim_results[[125]] <- sim_results[[128]] + male + college + age_50 + west + emp + child
+sim_results[[126]] <- sim_results[[129]] + male + college + age_50 + mid + emp + child
 
 final_mean1 <- 0
 final_mean2 <- 0
@@ -51,14 +51,14 @@ final_mean2 <- 0
 
 for (i in 1:100000){
   temp_mean <- 0
-  for (j in 1:124){
+  for (j in 1:121){
     temp_mean <- temp_mean + sim_results[[j]][i]
   }
-  final_mean1[i] <- temp_mean/124
-  for(j in 125:129){
+  final_mean1[i] <- temp_mean/121
+  for(j in 122:126){
     temp_mean <- temp_mean + sim_results[[j]][i]
   }
-  final_mean2[i] <- temp_mean/129
+  final_mean2[i] <- temp_mean/126
 }
 
 #vector subtraction of all calculated pairs of means
