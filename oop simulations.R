@@ -36,11 +36,11 @@ for(i in 1:126){
 
 #Modify the last 5 people based on the characteristics of the missing data
 
-sim_results[[122]] <- sim_results[[125]] + male + age_60 + on + retired + spouse + college
-sim_results[[123]] <- sim_results[[126]] + male + college + age_60 + on + emp + spouse
-sim_results[[124]] <- sim_results[[127]] + male + college + age_50 + on + emp + child
-sim_results[[125]] <- sim_results[[128]] + male + college + age_50 + west + emp + child
-sim_results[[126]] <- sim_results[[129]] + male + college + age_50 + mid + emp + child
+sim_results[[122]] <- sim_results[[122]] + male + age_60 + on + retired + spouse + college
+sim_results[[123]] <- sim_results[[123]] + male + college + age_60 + on + emp + spouse
+sim_results[[124]] <- sim_results[[124]] + male + college + age_50 + on + emp + child
+sim_results[[125]] <- sim_results[[125]] + male + college + age_50 + west + emp + child
+sim_results[[126]] <- sim_results[[126]] + male + college + age_50 + mid + emp + child
 
 final_mean1 <- 0
 final_mean2 <- 0
